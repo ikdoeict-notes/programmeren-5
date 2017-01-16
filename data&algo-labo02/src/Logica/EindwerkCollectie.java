@@ -28,25 +28,20 @@ public class EindwerkCollectie implements EindwerkCollectieInterface {
     
     @Override
     public Eindwerk[] getEindwerkenVanOpleiding(String opleiding) {
-        //SortedSet<Eindwerk> s = new TreeSet<Eindwerk>();
-        List<Eindwerk> ls = new ArrayList<Eindwerk>();
-        //eindwerkenlijst.stream().filter(e -> e.opleiding == opleiding).forEach(e -> ls.add(e));
+        List<Eindwerk> ls = new ArrayList<Eindwerk>();     
         for (int i = 0; i < eindwerkenlijst.size(); i++) {
-            if (eindwerkenlijst.get(i).opleiding.equals(opleiding) && !ls.contains(eindwerkenlijst.get(i))) ls.add(eindwerkenlijst.get(i));
-        }
-       
+            if (eindwerkenlijst.get(i).opleiding.equals(opleiding) && !ls.contains(eindwerkenlijst.get(i))) {
+                ls.add(eindwerkenlijst.get(i));
+            }
+        }       
         Eindwerk[] e = new Eindwerk[ls.size()];
         
-        if (ls.size() != 0) {     
-            
+        if (ls.size() != 0) {                 
             for (int i = 0; i < ls.size(); i++) {
                 e[i] = ls.get(i);
-            }
-            
+            }            
             Arrays.sort(e);
-        }
-        else e = null;
-
+        } else e = null;
         return e;
     }
 
