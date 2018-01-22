@@ -20,13 +20,15 @@ public class NaamGenerator {
     private List<String> firstNamesList;
     private List<String> lastNamesList;
     private List<String> titlesList;
-    private final String PATH = System.getProperty("user.dir"); 
-    private final String wordsFile = PATH + "wordsEn.txt";
-    private final String firstNamesFile = PATH + "first-names.txt";
-    private final String lastNamesFile = PATH + "names.txt";
+    
+    private final String PATH = System.getProperty("user.dir") + "/src/profilinga/"; 
+    private final String wordsFile = PATH + "/wordsEn.txt";
+    private final String firstNamesFile = PATH + "/first-names.txt";
+    private final String lastNamesFile = PATH + "/names.txt";
     
     public NaamGenerator(){
         this.random = new Random(1);
+        System.out.println(System.getProperty("user.dir") + "/src/profininga/");
         initialize();
     }
     
